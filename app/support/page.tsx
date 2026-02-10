@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { sendEmail } from "@/app/actions/sendEmail";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Mail, MessageSquare, CheckCircle } from "lucide-react";
@@ -23,10 +24,21 @@ export default function SupportPage() {
     } = useForm<Inputs>();
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        console.log(data);
-        reset();
+        try {
+            const result = await sendEmail(data);
+            if (result.success) {
+                reset();
+                // We rely on React Hook Form's isSubmitSuccessful to show the success message,
+                // but since we are handling submission manually, we might need to handle state more explicitly
+                // if we want perfect control. However, react-hook-form's handleSubmit handles isSubmitSuccessful
+                // automatically if the promise resolves.
+            } else {
+                alert("Erreur lors de l'envoi : " + result.error);
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Une erreur inattendue est survenue.");
+        }
     };
 
     return (
