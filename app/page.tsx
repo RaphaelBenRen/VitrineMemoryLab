@@ -63,7 +63,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative mx-auto w-full max-w-[260px] md:max-w-[340px] lg:mr-0"
+              className="relative mx-auto w-full max-w-[260px] md:max-w-[340px]"
             >
               <div className="relative rounded-[3rem] border-8 border-[#302b63] overflow-hidden shadow-2xl shadow-purple-500/20 bg-black rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
                 <Image
