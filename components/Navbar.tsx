@@ -32,9 +32,11 @@ export const Navbar = () => {
                 }`}
         >
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
-                        <Rocket size={24} className="group-hover:rotate-12 transition-transform" />
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-purple-500/20">
+                        {/* <Rocket size={24} className="group-hover:rotate-12 transition-transform" /> */}
+                        {/* Using explicit img tag here or Next Image. Navbar is client component. */}
+                        <img src="/images/memoryLab-Neon-Lab-1024x1024.png" alt="Logo" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <span className="text-xl font-bold text-white">
                         MemoryLab Pro

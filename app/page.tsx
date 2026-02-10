@@ -21,7 +21,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen overflow-x-hidden">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 flex flex-col justify-center min-h-[90vh]">
+      <section className="relative pt-20 pb-20 flex flex-col justify-center min-h-[85vh]">
         {/* Glow Effects */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
           <div className="absolute top-[-10%] left-[20%] w-[40%] h-[40%] bg-[var(--color-brand-primary)] opacity-20 blur-[150px] rounded-full" />
@@ -39,7 +39,7 @@ export default function Home() {
               className="text-left"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-[var(--color-glass-border)] backdrop-blur-md text-sm text-[var(--color-brand-accent)] mb-8 shadow-lg shadow-purple-500/10">
-                <Rocket size={16} />
+                <Image src="/images/memoryLab-Neon-Lab-1024x1024.png" alt="Logo" width={20} height={20} className="rounded-full" />
                 <span>Disponible sur l'App Store</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 text-[var(--color-brand-text-primary)]">
