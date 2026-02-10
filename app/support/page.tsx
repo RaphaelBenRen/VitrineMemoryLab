@@ -50,10 +50,10 @@ export default function SupportPage() {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
                 {/* Contact Info */}
-                <div className="space-y-6">
+                <div className="flex flex-col space-y-6 h-full">
                     <Card className="hover:bg-white/5 transition-colors">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-lg bg-[var(--color-brand-primary)]/20 text-[var(--color-brand-accent)]">
@@ -71,26 +71,69 @@ export default function SupportPage() {
                         </div>
                     </Card>
 
-                    <Card className="hover:bg-white/5 transition-colors">
+                    <Card className="hover:bg-white/5 transition-colors flex-1">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-lg bg-[var(--color-brand-secondary)]/40 text-white">
-                                <MessageSquare size={24} />
+                                <div className="mt-1">
+                                    <MessageSquare size={24} />
+                                </div>
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-2">Responsable</h3>
-                                <p className="text-[var(--color-brand-text-secondary)] mb-1 text-sm">
-                                    Raphaël Benat Renucci
-                                </p>
-                                <p className="text-xs text-gray-500">
-                                    Lead Developer & Founder
-                                </p>
+                                <h3 className="text-xl font-bold text-white mb-4">L'Équipe</h3>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                            Raphaël Benat Renucci
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Lead Developer & Founder
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                            Edanur Rodrigues
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Co-Founder
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                            Thibault Rabbe
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Co-Founder
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                            Martin Decompoix
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Co-Founder
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                            Thomas Prigent
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Co-Founder
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </Card>
                 </div>
 
                 {/* Contact Form */}
-                <Card>
+                <Card className="h-full">
                     <h3 className="text-xl font-bold mb-6 text-white">Envoyez-nous un message</h3>
 
                     <AnimatePresence>
