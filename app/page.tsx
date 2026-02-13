@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Rocket, Brain, FileText, Zap, MessageSquare, Upload } from "lucide-react";
 import Image from "next/image";
+import { RotatingLogo } from "@/components/RotatingLogo";
 
 export default function Home() {
   const container = {
@@ -21,9 +22,21 @@ export default function Home() {
     <div className="flex flex-col min-h-screen overflow-x-hidden">
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 flex flex-col justify-center min-h-[85vh]">
+      {/* Hero Section */}
+      <section className="relative pt-10 lg:pt-0 flex flex-col justify-start lg:justify-center min-h-[85vh] lg:min-h-screen bg-transparent">
         {/* Glow Effects */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+          {/* Decorative Rotating Logo */}
+          <div
+            className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none -z-5"
+            style={{
+              maskImage: 'radial-gradient(circle, black 40%, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(circle, black 40%, transparent 70%)'
+            }}
+          >
+            <RotatingLogo className="w-full h-full" />
+          </div>
+
           <div className="absolute top-[-10%] left-[20%] w-[40%] h-[40%] bg-[var(--color-brand-primary)] opacity-20 blur-[150px] rounded-full" />
           <div className="absolute bottom-[-10%] right-[10%] w-[40%] h-[40%] bg-[var(--color-brand-secondary)] opacity-30 blur-[150px] rounded-full" />
         </div>
@@ -36,23 +49,35 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-left"
+              className="text-center md:text-left max-w-lg relative z-10 mx-auto md:mx-0"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-[var(--color-glass-border)] backdrop-blur-md text-sm text-[var(--color-brand-accent)] mb-8 shadow-lg shadow-purple-500/10">
                 <Image src="/images/memoryLab-Neon-Lab-1024x1024.png" alt="Logo" width={20} height={20} className="rounded-full" />
                 <span>Disponible sur l'App Store</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 text-[var(--color-brand-text-primary)]">
+              <h1 className="text-2xl md:text-4xl font-bold leading-tight mb-6 text-[var(--color-brand-text-primary)]">
                 Révisez plus intelligemment avec <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b16cea] to-[#ff5e62]">MemoryLab Pro</span>.
               </h1>
-              <p className="text-xl text-[var(--color-brand-text-secondary)] mb-10 max-w-xl leading-relaxed">
+              <p className="text-base text-[var(--color-brand-text-secondary)] mb-8 max-w-lg leading-relaxed">
                 L'application ultime pour les étudiants ingénieurs. Importez vos cours, générez des QCM par IA et maîtrisez vos examens.
               </p>
-              <div className="flex flex-col sm:flex-row gap-5">
-                <Button size="lg" icon={<Rocket />} onClick={() => window.open('https://apps.apple.com', '_blank')}>
+
+              {/* Mobile Only Logo */}
+              <div
+                className="lg:hidden w-60 h-60 mb-8 relative mx-auto"
+                style={{
+                  maskImage: 'radial-gradient(circle, black 40%, transparent 70%)',
+                  WebkitMaskImage: 'radial-gradient(circle, black 40%, transparent 70%)'
+                }}
+              >
+                <RotatingLogo className="w-full h-full" />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="md" icon={<Rocket />} onClick={() => window.open('https://apps.apple.com', '_blank')}>
                   Télécharger sur l'App Store
                 </Button>
-                <Button size="lg" variant="secondary" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button size="md" variant="secondary" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
                   Découvrir
                 </Button>
               </div>
@@ -63,9 +88,9 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative mx-auto w-full max-w-[260px] md:max-w-[340px]"
+              className="relative mx-auto w-full max-w-[160px] md:max-w-[200px] mb-12 lg:mb-0"
             >
-              <div className="relative rounded-[3rem] border-8 border-[#302b63] overflow-hidden shadow-2xl shadow-purple-500/20 bg-black rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
+              <div className="relative rounded-[2rem] border-4 md:border-8 border-[#302b63] overflow-hidden shadow-2xl shadow-purple-500/20 bg-black rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
                 <Image
                   src="/images/screenapp.jpg"
                   alt="Interface MemoryLab Pro"
@@ -83,11 +108,11 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 relative bg-black/10">
+      <section id="features" className="py-24 relative bg-[var(--color-brand-bg-end)]">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Fonctionnalités Clés</h2>
-            <p className="text-[var(--color-brand-text-secondary)] max-w-2xl mx-auto text-lg">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Fonctionnalités Clés</h2>
+            <p className="text-[var(--color-brand-text-secondary)] max-w-2xl mx-auto text-base">
               Importation, Génération, Révision. Tout ce dont vous avez besoin.
             </p>
           </div>
@@ -103,7 +128,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-[var(--color-brand-primary)]/20 flex items-center justify-center text-[var(--color-brand-accent)] mb-6 group-hover:scale-110 transition-transform">
                 <Upload size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Import Universel</h3>
+              <h3 className="text-lg font-bold mb-2 text-white">Import Universel</h3>
               <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                 Importez vos cours depuis des PDF ou utilisez le scanner intégré pour vos notes papier. MemoryLab centralise tout.
               </p>
@@ -113,7 +138,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-400 mb-6 group-hover:scale-110 transition-transform">
                 <Brain size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">QCM & Progression</h3>
+              <h3 className="text-lg font-bold mb-2 text-white">QCM & Progression</h3>
               <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                 Générez des QCM intelligents à partir de vos cours. Suivez votre historique de progression et identifiez vos lacunes.
               </p>
@@ -123,7 +148,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                 <Zap size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Flashcards IA</h3>
+              <h3 className="text-lg font-bold mb-2 text-white">Flashcards IA</h3>
               <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                 Transformez instantanément vos définitions et concepts clés en paquets de Flashcards prêts à l'emploi.
               </p>
@@ -133,7 +158,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-[var(--color-brand-success)]/20 flex items-center justify-center text-[var(--color-brand-success)] mb-6 group-hover:scale-110 transition-transform">
                 <MessageSquare size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Chat avec l'IA</h3>
+              <h3 className="text-lg font-bold mb-2 text-white">Chat avec l'IA</h3>
               <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                 Posez des questions directement sur votre cours. L'IA vous répond en citant les passages pertinents de vos documents.
               </p>
@@ -143,7 +168,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400 mb-6 group-hover:scale-110 transition-transform">
                 <FileText size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Résumés Automatiques</h3>
+              <h3 className="text-lg font-bold mb-2 text-white">Résumés Automatiques</h3>
               <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                 Obtenez des résumés concis de vos cours longs pour une révision rapide avant l'examen.
               </p>
@@ -154,7 +179,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-gray-500/20 flex items-center justify-center text-gray-400 mb-6 mx-auto">
                   <Rocket size={24} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">Et bien plus...</h3>
+                <h3 className="text-lg font-bold mb-2 text-white">Et bien plus...</h3>
                 <p className="text-[var(--color-brand-text-secondary)] text-sm leading-relaxed">
                   Découvrez toutes les fonctionnalités en téléchargeant l'app.
                 </p>

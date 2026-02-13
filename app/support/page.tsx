@@ -43,14 +43,14 @@ export default function SupportPage() {
 
     return (
         <div className="container mx-auto px-6 py-20 min-h-screen">
-            <div className="max-w-2xl mx-auto text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Support & Aide</h1>
-                <p className="text-[var(--color-brand-text-secondary)] text-lg">
+            <div className="max-w-2xl mx-auto text-center mb-10">
+                <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">Support & Aide</h1>
+                <p className="text-[var(--color-brand-text-secondary)] text-base">
                     Besoin d'assistance ? Contactez l'équipe de MemoryLab Pro.
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
                 {/* Contact Info */}
                 <div className="flex flex-col space-y-6 h-full">
@@ -60,11 +60,11 @@ export default function SupportPage() {
                                 <Mail size={24} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-2">Email Officiel</h3>
-                                <p className="text-[var(--color-brand-text-secondary)] mb-4 text-sm">
+                                <h3 className="text-lg font-bold text-white mb-2">Email Officiel</h3>
+                                <p className="text-[var(--color-brand-text-secondary)] mb-2 text-sm">
                                     Pour toute demande technique ou commerciale (App Store Support).
                                 </p>
-                                <a href="mailto:memorylab.app.contact@gmail.com" className="text-[var(--color-brand-accent)] hover:underline font-medium">
+                                <a href="mailto:memorylab.app.contact@gmail.com" className="text-[var(--color-brand-accent)] hover:underline font-medium text-sm">
                                     memorylab.app.contact@gmail.com
                                 </a>
                             </div>
@@ -79,11 +79,11 @@ export default function SupportPage() {
                                 </div>
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-4">L'Équipe</h3>
+                                <h3 className="text-lg font-bold text-white mb-4">L'Équipe</h3>
 
                                 <div className="space-y-4">
                                     <div>
-                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white text-sm">
                                             Raphaël Benat Renucci
                                         </p>
                                         <p className="text-xs text-gray-500">
@@ -92,7 +92,7 @@ export default function SupportPage() {
                                     </div>
 
                                     <div>
-                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white text-sm">
                                             Edanur Rodrigues
                                         </p>
                                         <p className="text-xs text-gray-500">
@@ -101,7 +101,7 @@ export default function SupportPage() {
                                     </div>
 
                                     <div>
-                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white text-sm">
                                             Thibault Rabbe
                                         </p>
                                         <p className="text-xs text-gray-500">
@@ -110,7 +110,7 @@ export default function SupportPage() {
                                     </div>
 
                                     <div>
-                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white text-sm">
                                             Martin Decompoix
                                         </p>
                                         <p className="text-xs text-gray-500">
@@ -119,7 +119,7 @@ export default function SupportPage() {
                                     </div>
 
                                     <div>
-                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white">
+                                        <p className="text-[var(--color-brand-text-secondary)] font-medium text-white text-sm">
                                             Thomas Prigent
                                         </p>
                                         <p className="text-xs text-gray-500">
@@ -134,7 +134,7 @@ export default function SupportPage() {
 
                 {/* Contact Form */}
                 <Card className="h-full">
-                    <h3 className="text-xl font-bold mb-6 text-white">Envoyez-nous un message</h3>
+                    <h3 className="text-lg font-bold mb-6 text-white">Envoyez-nous un message</h3>
 
                     <AnimatePresence>
                         {isSubmitSuccessful ? (
